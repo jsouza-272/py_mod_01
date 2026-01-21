@@ -1,16 +1,16 @@
 #!python3
-'''
-This program displays the following information about a plant on the screen:
-- Plant name
-- Plant height in centimeters (cm)
-- Plant age in days
+"""Garden introduction module.
 
-The values are defined directly in the code.
-'''
+This module demonstrates basic Python variable usage and string formatting
+by displaying information about a garden plant.
+"""
+
 if __name__ == "__main__":
     name = "Rose"
     height = 25
     age = 30
     print("=== Welcome to My Garden ===")
-    print(f"Plant: {name}\nHeight: {height}cm\nAge: {age} days\n")
-    print("=== End of Program ===")
+    print(f"Plant: {name}")
+    print(f"Height: {height}cm")
+    print(f"Age: {age} days")
+    print("\n=== End of Program ===")
