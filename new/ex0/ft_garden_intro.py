@@ -1,4 +1,9 @@
 #!python3
+"""Garden introduction module.
+
+This module demonstrates basic Python variable usage and string formatting
+by displaying information about a garden plant.
+"""
 
 if __name__ == "__main__":
     name = "Rose"
