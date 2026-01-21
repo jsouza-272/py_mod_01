@@ -5,12 +5,13 @@ This module implements a SecurePlant class with private attributes and
 validation methods to ensure only valid data is accepted.
 """
 
+
 class SecurePlant:
     """Represents a plant with secure, validated attributes.
-    
+
     This class uses private attributes (name-mangled with __) and provides
     getter/setter methods with validation to prevent invalid data.
-    
+
     Attributes:
         __name (str): The private name of the plant.
         __height (int): The private height of the plant in centimeters.
@@ -19,7 +20,7 @@ class SecurePlant:
 
     def __init__(self, name, height, age):
         """Initialize a new SecurePlant instance with validation.
-        
+
         Args:
             name (str): The name of the plant.
             height (int): The initial height of the plant in centimeters.
@@ -34,7 +35,7 @@ class SecurePlant:
 
     def get_height(self):
         """Get the plant's current height.
-        
+
         Returns:
             int: The height of the plant in centimeters.
         """
@@ -42,9 +43,10 @@ class SecurePlant:
 
     def set_height(self, new_height):
         """Set the plant's height with validation.
-        
+
         Args:
-            new_height (int): The new height in centimeters. Must be non-negative.
+            new_height (int): The new height in centimeters.
+            Must be non-negative.
         """
         if new_height < 0:
             t_aux = "Invalid operation attempted:"
@@ -56,7 +58,7 @@ class SecurePlant:
 
     def get_age(self):
         """Get the plant's current age.
-        
+
         Returns:
             int: The age of the plant in days.
         """
@@ -64,7 +66,7 @@ class SecurePlant:
 
     def set_age(self, new_age):
         """Set the plant's age with validation.
-        
+
         Args:
             new_age (int): The new age in days. Must be non-negative.
         """
@@ -78,7 +80,7 @@ class SecurePlant:
 
     def get_info(self):
         """Get formatted information about the plant.
-        
+
         Returns:
             str: A string containing the plant's name, height, and age.
         """

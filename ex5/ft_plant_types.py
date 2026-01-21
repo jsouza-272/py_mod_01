@@ -6,9 +6,10 @@ and specialized subclasses for Flowers, Trees, and Vegetables, each with
 unique behaviors and characteristics.
 """
 
+
 class Plant:
     """Base class representing a generic plant.
-    
+
     Attributes:
         name (str): The name of the plant.
         height (int): The current height of the plant in centimeters.
@@ -18,7 +19,7 @@ class Plant:
 
     def __init__(self, name, height, age):
         """Initialize a new Plant instance.
-        
+
         Args:
             name (str): The name of the plant.
             height (int): The initial height of the plant in centimeters.
@@ -31,7 +32,7 @@ class Plant:
 
     def get_info(self):
         """Get formatted information about the plant.
-        
+
         Returns:
             str: A string containing the plant type, name, height, and age.
         """
@@ -41,14 +42,14 @@ class Plant:
 
 class Flower(Plant):
     """Represents a flowering plant with color and blooming capability.
-    
+
     Attributes:
         color (str): The color of the flower.
     """
 
     def __init__(self, name, height, age, color):
         """Initialize a new Flower instance.
-        
+
         Args:
             name (str): The name of the flower.
             height (int): The initial height in centimeters.
@@ -72,14 +73,14 @@ class Flower(Plant):
 
 class Tree(Plant):
     """Represents a tree with trunk diameter and shade production.
-    
+
     Attributes:
         trunk_diameter (int): The diameter of the tree trunk in centimeters.
     """
 
     def __init__(self, name, height, age, trunk_diameter):
         """Initialize a new Tree instance.
-        
+
         Args:
             name (str): The name of the tree.
             height (int): The initial height in centimeters.
@@ -100,7 +101,7 @@ class Tree(Plant):
 
     def get_info(self):
         """Get formatted information about the tree.
-        
+
         Returns:
             str: Plant information including trunk diameter.
         """
@@ -109,7 +110,7 @@ class Tree(Plant):
 
 class Vegetable(Plant):
     """Represents a vegetable plant with harvest and nutritional information.
-    
+
     Attributes:
         harvest_season (str): The season when the vegetable can be harvested.
         nutritional_value (str): The key nutritional value of the vegetable.
@@ -117,7 +118,7 @@ class Vegetable(Plant):
 
     def __init__(self, name, height, age,  harvest_season, nutritional_value):
         """Initialize a new Vegetable instance.
-        
+
         Args:
             name (str): The name of the vegetable.
             height (int): The initial height in centimeters.
@@ -139,7 +140,7 @@ class Vegetable(Plant):
 
     def get_info(self):
         """Get formatted information about the vegetable.
-        
+
         Returns:
             str: Plant information including harvest season.
         """

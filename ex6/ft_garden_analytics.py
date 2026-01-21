@@ -6,9 +6,10 @@ classes demonstrating inheritance, static/class methods, inner classes, and
 various OOP patterns for tracking plants, gardens, and analytics.
 """
 
+
 class Plant:
     """Base plant class with growth tracking.
-    
+
     Attributes:
         name (str): The name of the plant.
         height (int): The current height of the plant in centimeters.
@@ -18,7 +19,7 @@ class Plant:
 
     def __init__(self, name, height, age):
         """Initialize a new Plant instance.
-        
+
         Args:
             name (str): The name of the plant.
             height (int): The initial height in centimeters.
@@ -36,7 +37,7 @@ class Plant:
 
     def growth(self):
         """Calculate total growth from starting height.
-        
+
         Returns:
             int: The difference between current and starting height.
         """
@@ -44,7 +45,7 @@ class Plant:
 
     def get_info(self):
         """Get formatted information about the plant.
-        
+
         Returns:
             str: The plant's name and height.
         """
@@ -53,14 +54,14 @@ class Plant:
 
 class FloweringPlant(Plant):
     """A plant that can produce flowers and bloom.
-    
+
     Attributes:
         color (str): The color of the flower.
     """
 
     def __init__(self, name, height, age, color):
         """Initialize a new FloweringPlant instance.
-        
+
         Args:
             name (str): The name of the plant.
             height (int): The initial height in centimeters.
@@ -72,7 +73,7 @@ class FloweringPlant(Plant):
 
     def blooming(self):
         """Check if the plant is blooming based on height.
-        
+
         Returns:
             bool: True if height is greater than 20, False otherwise.
         """
@@ -82,7 +83,7 @@ class FloweringPlant(Plant):
 
     def get_info(self):
         """Get formatted information about the flowering plant.
-        
+
         Returns:
             str: Plant info with color and blooming status.
         """
@@ -93,14 +94,14 @@ class FloweringPlant(Plant):
 
 class PrizeFlower(FloweringPlant):
     """A flowering plant that has prize points.
-    
+
     Attributes:
         prize (int): The number of prize points awarded to this flower.
     """
 
     def __init__(self, name, height, age, color, prize):
         """Initialize a new PrizeFlower instance.
-        
+
         Args:
             name (str): The name of the flower.
             height (int): The initial height in centimeters.
@@ -113,7 +114,7 @@ class PrizeFlower(FloweringPlant):
 
     def get_info(self):
         """Get formatted information about the prize flower.
-        
+
         Returns:
             str: Plant info with prize points.
         """
@@ -122,13 +123,14 @@ class PrizeFlower(FloweringPlant):
 
 class Garden:
     """Represents a garden containing multiple plants.
-    
+
     WARNING: This class uses a mutable default argument (plants: list = [])
-    in __init__, which can lead to unexpected behavior if not handled carefully.
+    in __init__, which can lead to unexpected
+    behavior if not handled carefully.
     The same default list instance is shared across all Garden instances that
     don't provide their own plants list. This is intentional for demonstration
     purposes but is generally considered an anti-pattern in Python.
-    
+
     Attributes:
         g_name (str): The name of the garden.
         plant_st (int): The starting number of plants.
@@ -139,7 +141,7 @@ class Garden:
 
     def __init__(self, g_name, plants: list = [], plant_qnt=0):
         """Initialize a new Garden instance.
-        
+
         Args:
             g_name (str): The name of the garden.
             plants (list, optional): Initial list of plants. Defaults to [].
@@ -155,7 +157,7 @@ class Garden:
 
     def add_plant(self, plant):
         """Add a plant to the garden and update the score.
-        
+
         Args:
             plant (Plant): The plant to add to the garden.
         """
@@ -172,7 +174,7 @@ class Garden:
 
     def total_growth(self):
         """Calculate total growth of all plants in the garden.
-        
+
         Returns:
             int: Sum of growth for all plants.
         """
@@ -183,7 +185,7 @@ class Garden:
 
     def calc_score(self):
         """Calculate the garden score based on prize flowers.
-        
+
         Returns:
             int: Total prize points from all PrizeFlower instances.
         """
@@ -201,7 +203,7 @@ class Garden:
 
 class GardenManager:
     """Manages multiple gardens with static and class methods.
-    
+
     Attributes:
         gardens (list): List of Garden objects being managed.
         total_gardens (int): Count of total gardens managed.
@@ -215,10 +217,10 @@ class GardenManager:
     @classmethod
     def create_garden_network(cls, garden: Garden):
         """Create a garden network with the given garden and Bob's garden.
-        
+
         Args:
             garden (Garden): A garden to add to the network.
-            
+
         Returns:
             GardenManager: A manager instance with multiple gardens.
         """
@@ -233,7 +235,7 @@ class GardenManager:
 
     def add_garden(self, garden: Garden):
         """Add a garden to the manager.
-        
+
         Args:
             garden (Garden): The garden to add.
         """
@@ -243,10 +245,10 @@ class GardenManager:
     @staticmethod
     def count_gardens(gardens: list):
         """Count the number of gardens in a list.
-        
+
         Args:
             gardens (list): List of gardens to count.
-            
+
         Returns:
             int: The number of gardens.
         """
@@ -257,7 +259,7 @@ class GardenManager:
 
     class GardenStats:
         """Inner class for analyzing garden statistics.
-        
+
         Attributes:
             garden (Garden): The garden being analyzed.
             g_manager (GardenManager): The manager containing the garden.
@@ -265,7 +267,7 @@ class GardenManager:
 
         def __init__(self, garden, g_manager):
             """Initialize a new GardenStats instance.
-            
+
             Args:
                 garden (str): Name of the garden to analyze.
                 g_manager (GardenManager): The garden manager.
@@ -275,11 +277,11 @@ class GardenManager:
 
         def set_garden(self, garden, g_manager):
             """Find and set the garden by name.
-            
+
             Args:
                 garden (str): The name of the garden to find.
                 g_manager (GardenManager): The manager to search in.
-                
+
             Returns:
                 Garden or None: The found garden, or None if not found.
             """
@@ -292,7 +294,7 @@ class GardenManager:
         @staticmethod
         def plant_status(garden: Garden):
             """Display plant status for a garden.
-            
+
             Args:
                 garden (Garden): The garden to analyze.
             """
@@ -303,7 +305,7 @@ class GardenManager:
         @staticmethod
         def types(garden: Garden):
             """Display plant type distribution in a garden.
-            
+
             Args:
                 garden (Garden): The garden to analyze.
             """
@@ -322,7 +324,7 @@ class GardenManager:
 
         def height_valid(self):
             """Check if all plants in all gardens have valid heights.
-            
+
             Returns:
                 bool: True if all heights are non-negative, False otherwise.
             """
@@ -334,7 +336,7 @@ class GardenManager:
 
         def scores(self):
             """Get formatted scores for all gardens.
-            
+
             Returns:
                 str: Comma-separated garden scores.
             """

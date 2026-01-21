@@ -5,9 +5,10 @@ This module defines a Plant class with methods to track growth over time,
 including weekly growth cycles and information retrieval.
 """
 
+
 class Plant:
     """Represents a plant with growth tracking capabilities.
-    
+
     Attributes:
         name (str): The name of the plant.
         height (int): The current height of the plant in centimeters.
@@ -17,7 +18,7 @@ class Plant:
 
     def __init__(self, name, height, age):
         """Initialize a new Plant instance.
-        
+
         Args:
             name (str): The name of the plant.
             height (int): The initial height of the plant in centimeters.
@@ -49,7 +50,7 @@ class Plant:
 
     def get_info(self):
         """Get formatted information about the plant.
-        
+
         Returns:
             str: A string containing the plant's name, height, and age,
                  with optional growth information if the plant has grown.

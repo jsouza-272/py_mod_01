@@ -5,9 +5,10 @@ This module defines a Plant class to store plant information and demonstrates
 creating and displaying a collection of plants in a garden registry.
 """
 
+
 class Plant:
     """Represents a plant with basic attributes.
-    
+
     Attributes:
         name (str): The name of the plant.
         height (int): The height of the plant in centimeters.
@@ -16,7 +17,7 @@ class Plant:
 
     def __init__(self, name, height, age):
         """Initialize a new Plant instance.
-        
+
         Args:
             name (str): The name of the plant.
             height (int): The height of the plant in centimeters.
